@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaiDay Travel</title>
+    <!-- Font Google untuk tampilan elegan -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 1. Header & Nav -->
+    <header>
+        <div class="logo">DaiDay</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#packages">Paket Wisata</a></li>
+                <li><a href="#booking">Pemesanan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. Main -->
+    <main>
+        <!-- Section Hero -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Jelajahi Dunia dengan Elegan</h1>
+                <p>Temukan pengalaman liburan yang tak terlupakan dengan layanan premium kami, didesain khusus untuk memberikan momen terbaik dalam hidup Anda.</p>
+                <a href="#packages" class="btn btn-primary">Lihat Paket Wisata</a>
+            </div>
+        </section>
+
+        <!-- 3. Section Paket Wisata -->
+        <section id="packages" class="packages-section">
+            <div class="section-header">
+                <h2>Pilihan Paket Wisata</h2>
+                <p>Destinasi favorit dengan layanan kualitas tinggi.</p>
+            </div>
+            
+            <div class="package-container" id="package-list">
+                <!-- Data akan di-render menggunakan JavaScript -->
+            </div>
+
+            <!-- Form Tambah Paket (Fitur Dinamis JS) -->
+            <div class="admin-panel">
+                <h3>Tambah Destinasi Baru</h3>
+                <form id="add-package-form" class="add-form">
+                    <input type="text" id="new-name" placeholder="Nama Destinasi" required>
+                    <input type="text" id="new-desc" placeholder="Deskripsi Singkat" required>
+                    <input type="text" id="new-price" placeholder="Harga (ex: Rp 5.000.000)" required>
+                    <input type="url" id="new-img" placeholder="URL Gambar (Opsional)">
+                    <button type="submit" class="btn btn-secondary">Tambah Paket</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 4. Section Pemesanan -->
+        <section id="booking" class="booking-section">
+            <div class="booking-card">
+                <h2>Formulir Pemesanan</h2>
+                <p>Amankan kursi Anda untuk petualangan menakjubkan berikutnya.</p>
+                
+                <form id="booking-form" novalidate>
+                    <!-- Input Text -->
+                    <div class="form-control">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap Anda">
+                        <small class="error-msg"></small>
+                    </div>
+
+                    <!-- Input Email -->
+                    <div class="form-control">
+                        <label for="email">Alamat Email</label>
+                        <input type="email" id="email" name="email" placeholder="contoh@email.com">
+                        <small class="error-msg"></small>
+                    </div>
+
+                    <div class="form-row">
+                        <!-- Input Number -->
+                        <div class="form-control half-width">
+                            <label for="age">Umur</label>
+                            <input type="number" id="age" name="age" placeholder="Min. 18 tahun" min="18">
+                            <small class="error-msg"></small>
+                        </div>
+                        
+                        <!-- Input Number (Telepon) -->
+                        <div class="form-control half-width">
+                            <label for="phone">Nomor Telepon</label>
+                            <input type="number" id="phone" name="phone" placeholder="Contoh: 08123456789">
+                            <small class="error-msg"></small>
+                        </div>
+                    </div>
+
+                    <!-- Input Select -->
+                    <div class="form-control">
+                        <label for="package-select">Pilih Paket Wisata</label>
+                        <select id="package-select" name="package">
+                            <option value="">-- Pilih Destinasi --</option>
+                            <!-- Opsi akan di-render oleh JavaScript -->
+                        </select>
+                        <small class="error-msg"></small>
+                    </div>
+
+                    <!-- Input Radio -->
+                    <div class="form-control">
+                        <label>Pilih Kelas Penerbangan</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="flight" value="Economy"> Economy
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="flight" value="Business"> Business
+                            </label>
+                        </div>
+                        <small class="error-msg" id="flight-error"></small>
+                    </div>
+
+                    <!-- Input Checkbox -->
+                    <div class="form-control">
+                        <label>Fasilitas Tambahan (Opsional)</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="addons" value="Insurance"> Asuransi Perjalanan
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="addons" value="Visa"> Bantuan Visa
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary submit-btn">Konfirmasi Pesanan</button>
+                    <div id="success-message" class="success-msg"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- 5. Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3 class="logo-footer">DaiDay</h3>
+            <p>Melayani perjalanan impian Anda dengan sentuhan elegan.</p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DaiDay Travel Agency. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
